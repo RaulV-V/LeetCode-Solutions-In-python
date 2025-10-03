@@ -12,6 +12,4 @@ class Solution(object):
                 nums[k] = i
                 k += 1
         return k
-        #while pointerA < nums:
-            #nums[pointerA] = -1
-            #pointerA += 1
+       
