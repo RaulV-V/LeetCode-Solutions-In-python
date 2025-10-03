@@ -1,4 +1,4 @@
-#This solution runs in O(n) time and O(1) space
+#This solution runs in O(n) time and O(1) space.
 class Solution(object):
     def removeElement(self, nums, val):
         """
