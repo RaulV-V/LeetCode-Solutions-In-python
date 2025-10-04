@@ -7,10 +7,8 @@ class Solution:
         n = len(height)
         if n < 3:
             return 0
-
         water = [0] * n
 
-        # Left → right: fill basins when we hit a wall >= current wall
         cur = 0
         for i in range(n):
             if height[cur] <= height[i]:
@@ -18,16 +16,14 @@ class Solution:
                     water[j] = height[cur] - height[j]
                 cur = i
 
-        # Right → left: fill basins from the other side
         cur = n - 1
         for i in reversed(range(n)):
             if height[cur] <= height[i]:
                 for j in range(i + 1, cur):
-                    # take the max with what left-scan already filled
                     fill = height[cur] - height[j]
                     if fill > water[j]:
                         water[j] = fill
                 cur = i
 
-        # Guard against negatives (can happen at edges)
+        
         return sum(max(0, w) for w in water)
