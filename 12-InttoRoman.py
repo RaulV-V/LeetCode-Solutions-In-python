@@ -6,9 +6,6 @@
 
 # This algorithmn runs in O(1) time and O(1) space but some time can be theoretically mitagated by adding 
 # additional if statements to jump to which place to start at
-
-
-
 class Solution:
     def intToRoman(self, num: int) -> str:
         numeral = {
